@@ -28,13 +28,18 @@ An example of this loss function is the policy gradient loss:
 
 Ada dua cara untuk memperbarui forked repository menggunakan web interface yang disediakan oleh github tapi ribet, atau melalui terminal yang lebih ribet lagi.
 
-### Melalui Github (boring way) 💻
+### HIGH QUALITY EPISODE SELECTION USING A REWARD HEURISTIC
 
-1. Buka repo yang hasil fork di Github.
-1. Klik **Pull Requests** di sebelah kanan, lalu **New Pull Request**.
-1. Akan memunculkan hasil compare antara repo upstream dengan repo kamu(forked repo), dan jika menyatakan "There isn’t anything to compare.", tekan link **switching the base**, yang mana sekarang repo kamu(forked repo) akan dibalik menjadi base repo dan repo upstream menjadi head repo.
-1. Tekan **Create Pull Request**, beri judul pull request, Tekan **Send Pull Request**.
-1. Tekan **Merge Pull Request** dan **Confirm Merge**.
+The simplest choice of a heuristic for obtaining high quality data is using the top K rewards . This data that can be collected by performing probabilistic actions with our current policy and sorting the episodes by rewards from highest to lowest. We can then randomly pick state action pairs from the top K episodes and use them to train a neural network.
+
+To explain this method step by step:
+1. Initialise a neural network **f(x)** that takes states as input and outputs actions
+2. Collect data by using **f(x)** to collect state-action pairs for N number of episodes.
+3. Sort the episode data by reward from highest to lowest.
+4. Select top K episodes and sample state action action pairs from these
+5. Train **f(x)** with these state action pairs
+6. Repeat from 2 till reward is satisfactory.
+
 
 \* _pastikan kamu tidak merubah apapun pada forked repo, supaya melakukan merge secara otomatis, kalo tidak ya paling2 konflik._
 
