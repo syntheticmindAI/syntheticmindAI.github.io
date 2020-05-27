@@ -7,7 +7,7 @@ description: Ada dua cara untuk memperbarui forked repository menggunakan web in
 tag:
   - Lunar Lander
   - Cartpole
-  - Quality data
+  - Supervised Learning
 image: /cara-memperbarui-fork-repository/repo.png
 ---
 
@@ -22,13 +22,21 @@ An example of this loss function is the policy gradient loss:
 
 
 <figure>
-<img src="{{ page.image }}" alt="ilustrasi repo yang mau diupdate">
-<figcaption>Fig 1. Gambaran ribetnya.</figcaption>
+<img src="loss.png" alt="policy gradient loss" >
+<figcaption>Fig 1. Policy gradient loss.</figcaption>
 </figure>
 
-Ada dua cara untuk memperbarui forked repository menggunakan web interface yang disediakan oleh github tapi ribet, atau melalui terminal yang lebih ribet lagi.
+As shown above to get the gradient we not only need the episode trajectories in the actions a(t), predicted by phi given a state s(t),  we also need to have Ø(t) which is a form of the reward function.
+Adding this  Ø(t) to our loss function can make the agent harder to train and introduces a host of new hyperparameters to tune. 
+Although there have been a number of improvements to replace the Ø(t) function. A valid research question to ask is if we can remove the reward from our loss function and still have an agent perform actions that maximise reward.
 
-### HIGH QUALITY EPISODE SELECTION USING A REWARD HEURISTIC
+Imitation learning, where a set of human/expert demonstrations are used to train a policy has been successful in training robust game plating agents. But this method needs human/ expert demonstrations in the first place. This is an inefficient and low yield way of collecting data for training a policy. 
+
+A better approach given the constraints, is to find a way that we can collect high quality data for supervised learning without using any kind of demonstrations.  We define high quality data as state action pairs that can be used to improve a suboptimal policy.
+In this first article in the series, we explore the use of the reward function to select high quality state action pairs for the model to train on. In this way we get rid of Ø(t) and also show that we can get promising results on toy tasks, while using a much simpler loss function.
+
+
+#### HIGH QUALITY EPISODE SELECTION USING A REWARD HEURISTIC
 
 The simplest choice of a heuristic for obtaining high quality data is using the top K rewards . This data that can be collected by performing probabilistic actions with our current policy and sorting the episodes by rewards from highest to lowest. We can then randomly pick state action pairs from the top K episodes and use them to train a neural network.
 
@@ -41,44 +49,38 @@ To explain this method step by step:
 6. Repeat from 2 till reward is satisfactory.
 
 
-\* _pastikan kamu tidak merubah apapun pada forked repo, supaya melakukan merge secara otomatis, kalo tidak ya paling2 konflik._
+#### Results
 
-### Melalui terminal ⌨️
+We use the above method to maximise rewards on two open ai gym tasks: CartPole and Lunar Lander.
+CartPole Results
+The model can consistently get to the top score of 200 in the environment
 
-Tambahkan remote alamat repository yang aslinya disini tak beri nama `upstream`., ganti `ORIGINAL_OWNER` dan `ORIGINAL_REPO` dengan alamat repo aslimu.
+Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150
 
-```bash
-$ git add remote upstream git@github.com:ORIGINAL_OWNER/ORIGINAL_REPO.git
-$ git remote -v
-> origin    git@github.com:piharpi/www.git (fetch) # forked repo
-> origin    git@github.com:piharpi/www.git (push) # forked repo
-> upstream    git@github.com:ORIGINAL_OWNER/ORIGINAL_REPO.git (fetch) # upstream repo / original repo
-> upstream    git@github.com:ORIGINAL_OWNER/ORIGINAL_REPO.git (push) # upstream repo / original repo
-```
+Lunar Lander Results
+However, the same fixed hyperparameters do not work in the LunarLander environment. 
 
-Checkout ke local branch `master`.
+Run1; random seed; Batch size = 256; Total Rew Possible: >200
 
-```bash
-$ git checkout master
-> Switched to branch 'master'
-```
 
-Jika sudah, Merge local repo dengan remote `upstream/master`.
 
-```bash
-$ git merge upstream/master
-```
 
-Terakhir push local repo ke remote `origin`.
 
-```bash
-$ git add -A
-$ git commit -m "updating origin repo" && git push -u origin master
-```
 
-Selamat mencoba cara ribet ini, semoga bisa dipahami, saya sendiri lebih senang melalui terminal, klo ada yang ribet kenapa cari yang mudah.
 
-##### Resources
+
+
+Increasing sample size aka batch size achieves significantly higher scores but is still unstable.
+Run1 seed = 46; batch size = 2048;
+
+The fact that we can get good results by choosing top K training episodes and iteratively training on its state action pairs, merits further investigation. There may exist other methods of getting high quality data and this is the main focus of this continuing research. 
+
+The next article will highlight efforts in making the algorithm more stable, data selection, adding more complex test games and conducting experiments on why this works. Some of the planned experiments have already been completed and provide interesting insights.
+
+***At Synthetic Mind, we are pioneering a new way of doing AI research which we call Audience supported research. In addition to free bi monthly articles like this one, we would like to provide more value to our most interested readers. If you would like to support this research, suggest its direction,  get more in depth insights, explore further experiments, or would like to get technical support for repurposing the work produced here for your own research problems you can subscribe to our weekly newsletter for a $10 monthly fee.****
+
+
+#### References
 
 - [Syncing a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
 - [Update your fork directly on Github](https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/#top)
