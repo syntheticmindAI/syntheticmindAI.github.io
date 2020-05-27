@@ -18,3 +18,4 @@ Every week I post my research findings about experimental methods to train agent
 
 - {{ site.author.email }}
 - github.com/{{ site.author.username }}
+- [Twitter](https://twitter.com/syntheticmindAI)
