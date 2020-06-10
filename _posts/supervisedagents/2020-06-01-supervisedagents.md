@@ -1,15 +1,19 @@
 ---
 layout: post
 title: TRAINING GAME AGENTS WITH SUPERVISED LEARNING
-date: 2020-01-29 01:00 +0700
-modified: 2020-03-07 16:49:47 +07:00
-description: Ada dua cara untuk memperbarui forked repository menggunakan web interface yang disediakan oleh github tapi ribet, atau melalui terminal yang lebih ribet lagi.
+date: 2020-06-01 01:00 +0700
+modified: 2020-06-01 16:49:47 +07:00
+description: Supervised Agents.
 tag:
   - Lunar Lander
   - Cartpole
   - Supervised Learning
-image: /cara-memperbarui-fork-repository/repo.png
+image: /supervisedagents/repo.png
 ---
+
+<iframe width="600" height="315" src="https://www.youtube.com/embed/0fAOLhMN1n8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+###### *An agent trained with supervised learinng on the Lunar lander environment.* 
 
 Reinforcement Learning is a general, robust and performant paradigm. Its strengths become evident when combined with deep learning. Deep reinforcement learning can solve increasingly complex tasks with huge state space and complex rules. It has produced world champion-beating artificial agents in the games of chess, DOTA, go, and Starcraft. One may argue that any problem where scores are received for performing actions should be framed as a reinforcement learning problem. But behind these notable successes, lies huge problems. Deep reinforcement learning is hard to work with. A lot of effort goes into making agents learn correctly and robustly. Deep reinforcement learning also needs a huge amount of compute. Hundreds of thousands of dollars in compute is needed to reproduce the most impressive results. A lone researcher with limited resources cannot comfortably go beyond Atari games state space when experimenting with game playing agents. 
 
@@ -75,7 +79,7 @@ Run1 seed = 46; batch size = 2048;
 
 The fact that we can get good results by choosing top K training episodes and iteratively training on its state action pairs, merits further investigation. There may exist other methods of getting high quality data and this is the main focus of this continuing research. 
 
-The next article will highlight efforts in making the algorithm more stable, data selection, adding more complex test games and conducting experiments on why this works. Some of the planned experiments have already been completed and provide interesting insights.
+The next article in this series will highlight efforts in making the algorithm more stable, data selection, adding more complex test games and conducting experiments on why this works. Some of the planned experiments have already been completed and provide interesting insights.
 
 ***At Synthetic Mind, we are pioneering a new way of doing AI research which we call Audience supported research. In addition to free bi monthly articles like this one, we would like to provide more value to our most interested readers. If you would like to support this research, suggest its direction,  get more in depth insights, explore further experiments, or would like to get technical support for repurposing the work produced here for your own research problems you can subscribe to our weekly newsletter for a $10 monthly fee.****
 
