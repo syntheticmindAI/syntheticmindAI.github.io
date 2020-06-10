@@ -86,5 +86,4 @@ The next article in this series will highlight efforts in making the algorithm m
 
 #### References
 
-- [Syncing a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
-- [Update your fork directly on Github](https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/#top)
+- [Upside Down RL](https://arxiv.org/abs/1912.02877)
