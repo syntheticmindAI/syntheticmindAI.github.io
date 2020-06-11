@@ -9,8 +9,10 @@ tag:
   - Cartpole
   - Supervised Learning
 pgeq: /supervisedagents/loss.png
-cl: /supervisedagents/CartpoleLoss.png
-rewc: /supervisedagents/perfectCartpole.png
+cl: /supervisedagents/cartpoleloss.png
+rewc: /supervisedagents/perfectcartpole.png
+llgood: /supervisedagents/goodlunarrew.png
+llbad: /supervisedagents/badlunarrew.png
 ---
 
 <iframe width="600" height="315" src="https://www.youtube.com/embed/0fAOLhMN1n8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -59,37 +61,34 @@ To explain this method step by step:
 #### Results
 
 We use the above method to maximise rewards on two open ai gym tasks: CartPole and Lunar Lander.
-CartPole Results
+##### CartPole Results
 The model can consistently get to the top score of 200 in the environment:
 
 
 <figure>
-<img src="{{ page.cl }}" alt="cartpole loss">
-<figcaption>CartPole Loss.</figcaption>
-</figure>
-<figure>
 <img src="{{ page.rewc }}" alt="cartpole reward">
-<figcaption>CartPole Reward.</figcaption>
+<figcaption>Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150</figcaption>
 </figure>
 
 
-Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150
 
-Lunar Lander Results
+##### Lunar Lander Results
 However, the same fixed hyperparameters do not work in the LunarLander environment. 
 
-Run1; random seed; Batch size = 256; Total Rew Possible: >200
-
-
-
-
-
-
+<figure>
+<img src="{{ page.llbad }}" alt="LunarLander low reward">
+<figcaption>Run1; random seed; Batch size = 256;</figcaption>
+</figure>
 
 
 
 Increasing sample size aka batch size achieves significantly higher scores but is still unstable.
-Run1 seed = 46; batch size = 2048;
+
+
+<figure>
+<img src="{{ page.llgood }}" alt="LunarLander high reward">
+<figcaption>Run1; random seed; batch size = 2048;</figcaption>
+</figure>
 
 The fact that we can get good results by choosing top K training episodes and iteratively training on its state action pairs, merits further investigation. There may exist other methods of getting high quality data and this is the main focus of this continuing research. 
 

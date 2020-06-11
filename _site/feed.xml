@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2020-06-11T20:23:41+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Synthetic Mind</title><subtitle>Exploring alternatives to deep reinforcement learning.  </subtitle><author><name>Synthetic Mind</name><email>your-email@email.com</email></author><entry><title type="html">TRAINING GAME AGENTS WITH SUPERVISED LEARNING</title><link href="http://localhost:4000/supervisedagents/" rel="alternate" type="text/html" title="TRAINING GAME AGENTS WITH SUPERVISED LEARNING" /><published>2020-06-01T01:00:00+07:00</published><updated>2020-06-01T01:00:00+07:00</updated><id>http://localhost:4000/supervisedagents</id><content type="html" xml:base="http://localhost:4000/supervisedagents/">&lt;iframe width=&quot;600&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/0fAOLhMN1n8&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2020-06-11T21:25:56+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Synthetic Mind</title><subtitle>Exploring alternatives to deep reinforcement learning.  </subtitle><author><name>Synthetic Mind</name><email>your-email@email.com</email></author><entry><title type="html">TRAINING GAME AGENTS WITH SUPERVISED LEARNING</title><link href="http://localhost:4000/supervisedagents/" rel="alternate" type="text/html" title="TRAINING GAME AGENTS WITH SUPERVISED LEARNING" /><published>2020-06-01T01:00:00+07:00</published><updated>2020-06-01T01:00:00+07:00</updated><id>http://localhost:4000/supervisedagents</id><content type="html" xml:base="http://localhost:4000/supervisedagents/">&lt;iframe width=&quot;600&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/0fAOLhMN1n8&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;h6 id=&quot;an-agent-trained-with-supervised-learinng-on-the-lunar-lander-environment&quot;&gt;&lt;em&gt;An agent trained with supervised learinng on the Lunar lander environment.&lt;/em&gt;&lt;/h6&gt;
 
@@ -41,28 +41,29 @@ In this first article in the series, we explore the use of the reward function t
 
 &lt;h4 id=&quot;results&quot;&gt;Results&lt;/h4&gt;
 
-&lt;p&gt;We use the above method to maximise rewards on two open ai gym tasks: CartPole and Lunar Lander.
-CartPole Results
-The model can consistently get to the top score of 200 in the environment:&lt;/p&gt;
+&lt;p&gt;We use the above method to maximise rewards on two open ai gym tasks: CartPole and Lunar Lander.&lt;/p&gt;
+&lt;h5 id=&quot;cartpole-results&quot;&gt;CartPole Results&lt;/h5&gt;
+&lt;p&gt;The model can consistently get to the top score of 200 in the environment:&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;img src=&quot;/supervisedagents/CartpoleLoss.png&quot; alt=&quot;cartpole loss&quot; /&gt;
-&lt;figcaption&gt;CartPole Loss.&lt;/figcaption&gt;
+&lt;img src=&quot;/supervisedagents/perfectcartpole.png&quot; alt=&quot;cartpole reward&quot; /&gt;
+&lt;figcaption&gt;Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150&lt;/figcaption&gt;
 &lt;/figure&gt;
+
+&lt;h5 id=&quot;lunar-lander-results&quot;&gt;Lunar Lander Results&lt;/h5&gt;
+&lt;p&gt;However, the same fixed hyperparameters do not work in the LunarLander environment.&lt;/p&gt;
+
 &lt;figure&gt;
-&lt;img src=&quot;/supervisedagents/perfectCartpole.png&quot; alt=&quot;cartpole reward&quot; /&gt;
-&lt;figcaption&gt;CartPole Reward.&lt;/figcaption&gt;
+&lt;img src=&quot;/supervisedagents/badlunarrew.png&quot; alt=&quot;LunarLander low reward&quot; /&gt;
+&lt;figcaption&gt;Run1; random seed; Batch size = 256;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150&lt;/p&gt;
+&lt;p&gt;Increasing sample size aka batch size achieves significantly higher scores but is still unstable.&lt;/p&gt;
 
-&lt;p&gt;Lunar Lander Results
-However, the same fixed hyperparameters do not work in the LunarLander environment.&lt;/p&gt;
-
-&lt;p&gt;Run1; random seed; Batch size = 256; Total Rew Possible: &amp;gt;200&lt;/p&gt;
-
-&lt;p&gt;Increasing sample size aka batch size achieves significantly higher scores but is still unstable.
-Run1 seed = 46; batch size = 2048;&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/supervisedagents/goodlunarrew.png&quot; alt=&quot;LunarLander high reward&quot; /&gt;
+&lt;figcaption&gt;Run1; random seed; batch size = 2048;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;The fact that we can get good results by choosing top K training episodes and iteratively training on its state action pairs, merits further investigation. There may exist other methods of getting high quality data and this is the main focus of this continuing research.&lt;/p&gt;
 
