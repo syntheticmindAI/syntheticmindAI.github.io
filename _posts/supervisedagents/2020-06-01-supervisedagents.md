@@ -54,7 +54,10 @@ To explain this method step by step:
 
 We use the above method to maximise rewards on two open ai gym tasks: CartPole and Lunar Lander.
 CartPole Results
-The model can consistently get to the top score of 200 in the environment
+The model can consistently get to the top score of 200 in the environment:
+
+<img src="./CartpoleLoss.png" alt="drawing" width="300"/>
+<img src="./perfectCartpole.png" alt="drawing" width="300"/>
 
 Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150
 
