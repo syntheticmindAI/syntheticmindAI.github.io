@@ -8,7 +8,9 @@ tag:
   - Lunar Lander
   - Cartpole
   - Supervised Learning
-image: /supervisedagents/repo.png
+pgeq: /supervisedagents/loss.png
+cl: /supervisedagents/CartpoleLoss.png
+rewc: /supervisedagents/perfectCartpole.png
 ---
 
 <iframe width="600" height="315" src="https://www.youtube.com/embed/0fAOLhMN1n8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -24,12 +26,10 @@ Another promising paradigm is Upside down RL, where the appropriate action to ta
 We know that we can use a neural network to map state to actions and use a reward proxy in our loss function to maximise the probability that the actions taken will yield the highest reward. 
 An example of this loss function is the policy gradient loss:
 
-![policy gradient loss](./loss.png)
-
 
 <figure>
-<img src="{{ page.image }}" alt="ilustrasi repo yang mau diupdate">
-<figcaption>Policy Gradient loss.</figcaption>
+<img src="{{ page.pgeq }}" alt="Policy Gradient">
+<figcaption>Policy Gradient.</figcaption>
 </figure>
 
 
@@ -62,8 +62,16 @@ We use the above method to maximise rewards on two open ai gym tasks: CartPole a
 CartPole Results
 The model can consistently get to the top score of 200 in the environment:
 
-<img src="./CartpoleLoss.png" alt='drawing' width=300/>
-<img src='./perfectCartpole.png' alt='drawing' width=300/>
+
+<figure>
+<img src="{{ page.cl }}" alt="cartpole loss">
+<figcaption>CartPole Loss.</figcaption>
+</figure>
+<figure>
+<img src="{{ page.rewc }}" alt="cartpole reward">
+<figcaption>CartPole Reward.</figcaption>
+</figure>
+
 
 Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150
 
