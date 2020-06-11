@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2020-06-11T21:25:56+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Synthetic Mind</title><subtitle>Exploring alternatives to deep reinforcement learning.  </subtitle><author><name>Synthetic Mind</name><email>your-email@email.com</email></author><entry><title type="html">TRAINING GAME AGENTS WITH SUPERVISED LEARNING</title><link href="http://localhost:4000/supervisedagents/" rel="alternate" type="text/html" title="TRAINING GAME AGENTS WITH SUPERVISED LEARNING" /><published>2020-06-01T01:00:00+07:00</published><updated>2020-06-01T01:00:00+07:00</updated><id>http://localhost:4000/supervisedagents</id><content type="html" xml:base="http://localhost:4000/supervisedagents/">&lt;iframe width=&quot;600&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/0fAOLhMN1n8&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2020-06-12T03:03:03+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Synthetic Mind</title><subtitle>Exploring alternatives to deep reinforcement learning.  </subtitle><author><name>Synthetic Mind</name><email>your-email@email.com</email></author><entry><title type="html">TRAINING GAME AGENTS WITH SUPERVISED LEARNING</title><link href="http://localhost:4000/supervisedagents/" rel="alternate" type="text/html" title="TRAINING GAME AGENTS WITH SUPERVISED LEARNING" /><published>2020-06-01T01:00:00+07:00</published><updated>2020-06-01T01:00:00+07:00</updated><id>http://localhost:4000/supervisedagents</id><content type="html" xml:base="http://localhost:4000/supervisedagents/">&lt;iframe width=&quot;600&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/0fAOLhMN1n8&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;h6 id=&quot;an-agent-trained-with-supervised-learinng-on-the-lunar-lander-environment&quot;&gt;&lt;em&gt;An agent trained with supervised learinng on the Lunar lander environment.&lt;/em&gt;&lt;/h6&gt;
 
@@ -12,7 +12,7 @@
 An example of this loss function is the policy gradient loss:&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;img src=&quot;/supervisedagents/loss.png&quot; alt=&quot;Policy Gradient&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/syntheticmindAI/syntheticmindAI.github.io/master/_posts/supervisedagents/loss.png&quot; alt=&quot;Policy Gradient&quot; /&gt;
 &lt;figcaption&gt;Policy Gradient.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -46,7 +46,7 @@ In this first article in the series, we explore the use of the reward function t
 &lt;p&gt;The model can consistently get to the top score of 200 in the environment:&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;img src=&quot;/supervisedagents/perfectcartpole.png&quot; alt=&quot;cartpole reward&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/syntheticmindAI/syntheticmindAI.github.io/master/_posts/supervisedagents/perfectcartpole.png&quot; alt=&quot;cartpole reward&quot; /&gt;
 &lt;figcaption&gt;Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -54,14 +54,14 @@ In this first article in the series, we explore the use of the reward function t
 &lt;p&gt;However, the same fixed hyperparameters do not work in the LunarLander environment.&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;img src=&quot;/supervisedagents/badlunarrew.png&quot; alt=&quot;LunarLander low reward&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/syntheticmindAI/syntheticmindAI.github.io/master/_posts/supervisedagents/badlunarrew.png&quot; alt=&quot;LunarLander low reward&quot; /&gt;
 &lt;figcaption&gt;Run1; random seed; Batch size = 256;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Increasing sample size aka batch size achieves significantly higher scores but is still unstable.&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;img src=&quot;/supervisedagents/goodlunarrew.png&quot; alt=&quot;LunarLander high reward&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/syntheticmindAI/syntheticmindAI.github.io/master/_posts/supervisedagents/goodlunarrew.png&quot; alt=&quot;LunarLander high reward&quot; /&gt;
 &lt;figcaption&gt;Run1; random seed; batch size = 2048;&lt;/figcaption&gt;
 &lt;/figure&gt;
 

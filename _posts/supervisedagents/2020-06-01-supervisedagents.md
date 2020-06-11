@@ -30,7 +30,7 @@ An example of this loss function is the policy gradient loss:
 
 
 <figure>
-<img src="{{ page.pgeq }}" alt="Policy Gradient">
+<img src="https://raw.githubusercontent.com/syntheticmindAI/syntheticmindAI.github.io/master/_posts/supervisedagents/loss.png" alt="Policy Gradient">
 <figcaption>Policy Gradient.</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ The model can consistently get to the top score of 200 in the environment:
 
 
 <figure>
-<img src="{{ page.rewc }}" alt="cartpole reward">
+<img src="https://raw.githubusercontent.com/syntheticmindAI/syntheticmindAI.github.io/master/_posts/supervisedagents/perfectcartpole.png" alt="cartpole reward">
 <figcaption>Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ The model can consistently get to the top score of 200 in the environment:
 However, the same fixed hyperparameters do not work in the LunarLander environment. 
 
 <figure>
-<img src="{{ page.llbad }}" alt="LunarLander low reward">
+<img src="https://raw.githubusercontent.com/syntheticmindAI/syntheticmindAI.github.io/master/_posts/supervisedagents/badlunarrew.png" alt="LunarLander low reward">
 <figcaption>Run1; random seed; Batch size = 256;</figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ Increasing sample size aka batch size achieves significantly higher scores but i
 
 
 <figure>
-<img src="{{ page.llgood }}" alt="LunarLander high reward">
+<img src="https://raw.githubusercontent.com/syntheticmindAI/syntheticmindAI.github.io/master/_posts/supervisedagents/goodlunarrew.png" alt="LunarLander high reward">
 <figcaption>Run1; random seed; batch size = 2048;</figcaption>
 </figure>
 
