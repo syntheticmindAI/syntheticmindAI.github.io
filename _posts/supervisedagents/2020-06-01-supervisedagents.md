@@ -27,6 +27,12 @@ An example of this loss function is the policy gradient loss:
 ![policy gradient loss](./loss.png)
 
 
+<figure>
+<img src="{{ page.image }}" alt="ilustrasi repo yang mau diupdate">
+<figcaption>Policy Gradient loss.</figcaption>
+</figure>
+
+
 As shown above to get the gradient we not only need the episode trajectories in the actions a(t), predicted by phi given a state s(t),  we also need to have Ø(t) which is a form of the reward function.
 Adding this  Ø(t) to our loss function can make the agent harder to train and introduces a host of new hyperparameters to tune. 
 Although there have been a number of improvements to replace the Ø(t) function. A valid research question to ask is if we can remove the reward from our loss function and still have an agent perform actions that maximise reward.
@@ -56,7 +62,7 @@ We use the above method to maximise rewards on two open ai gym tasks: CartPole a
 CartPole Results
 The model can consistently get to the top score of 200 in the environment:
 
-<img src='./CartpoleLoss.png' alt='drawing' width=300/>
+<img src="./CartpoleLoss.png" alt='drawing' width=300/>
 <img src='./perfectCartpole.png' alt='drawing' width=300/>
 
 Batch size = 256; max timesteps = 70; updates per iter: 100; episodes sampled per iter: 150
