@@ -81,7 +81,7 @@ The fact that we can get good results by choosing top K training episodes and it
 
 The next article in this series will highlight efforts in making the algorithm more stable, data selection, adding more complex test games and conducting experiments on why this works. Some of the planned experiments have already been completed and provide interesting insights.
 
-***At Synthetic Mind, we are pioneering a new way of doing AI research which we call Audience supported research. In addition to free bi monthly articles like this one, we would like to provide more value to our most interested readers. If you would like to support this research, suggest its direction,  get more in depth insights, explore further experiments, or would like to get technical support for repurposing the work produced here for your own research problems you can [Subscribe](https://www.patreon.com/syntheticmind)  to our weekly newsletter for a $10 monthly fee.***
+***At Synthetic Mind, we are pioneering a new way of doing AI research which we call Audience supported research. In addition to free bi monthly articles like this one, we would like to provide more value to our most interested readers. If you would like to support this research, suggest its direction,  get more in depth insights, explore further experiments, or would like to get technical support for repurposing the work produced here for your own research problems you can [Subscribe](https://gumroad.com/l/bxJfF)  to our weekly newsletter for a $10 monthly fee.***
 
 
 #### References
