@@ -24,11 +24,8 @@ Another promising paradigm is Upside down RL, where the appropriate action to ta
 We know that we can use a neural network to map state to actions and use a reward proxy in our loss function to maximise the probability that the actions taken will yield the highest reward. 
 An example of this loss function is the policy gradient loss:
 
+![policy gradient loss](./loss.png)
 
-<figure>
-<img src="supervisedagents/loss.png" alt="policy gradient loss" >
-<figcaption>Fig 1. Policy gradient loss.</figcaption>
-</figure>
 
 As shown above to get the gradient we not only need the episode trajectories in the actions a(t), predicted by phi given a state s(t),  we also need to have Ø(t) which is a form of the reward function.
 Adding this  Ø(t) to our loss function can make the agent harder to train and introduces a host of new hyperparameters to tune. 
