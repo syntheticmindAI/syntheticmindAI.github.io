@@ -26,7 +26,7 @@ An example of this loss function is the policy gradient loss:
 
 
 <figure>
-<img src="loss.png" alt="policy gradient loss" >
+<img src="supervisedagents/loss.png" alt="policy gradient loss" >
 <figcaption>Fig 1. Policy gradient loss.</figcaption>
 </figure>
 
